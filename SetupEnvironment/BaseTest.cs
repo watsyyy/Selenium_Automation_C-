@@ -24,7 +24,6 @@ namespace SetupEnvironment
         [OneTimeSetUp]
         public void Initialize()
         {
-            ReporterTest.Log(Status.Info, $"|**|Nunit is initializing extent reports for test runs.|**|");
             extent = new ExtentReports();
         }
 
@@ -34,7 +33,6 @@ namespace SetupEnvironment
             htmlReporter = new ExtentHtmlReporter("C:\\Reports\\TestRun.html");
 
             extent.AttachReporter(htmlReporter);
-            ReporterTest.Log(Status.Info, $"|**|Nunit has attached extent report.|**|");
             
             extent.Flush();
             driver.Quit();

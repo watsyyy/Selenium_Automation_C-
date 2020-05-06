@@ -1,9 +1,7 @@
 ﻿using AventStack.ExtentReports;
-using NLog;
 using NUnit.Framework;
 using NUnit.Framework.Internal;
 using System;
-using System.Diagnostics.Eventing.Reader;
 using System.Net;
 
 namespace SetupEnvironment
