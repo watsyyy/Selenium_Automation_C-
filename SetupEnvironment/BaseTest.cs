@@ -4,6 +4,7 @@ using System;
 using AventStack.ExtentReports;
 using AventStack.ExtentReports.Reporter;
 using OpenQA.Selenium.Chrome;
+using System.Globalization;
 
 namespace SetupEnvironment
 {
@@ -25,6 +26,12 @@ namespace SetupEnvironment
         public void Initialize()
         {
             extent = new ExtentReports();
+
+            AppDomain.CurrentDomain.FirstChanceException += (s, e) =>
+            {
+                CultureInfo.DefaultThreadCurrentUICulture = new CultureInfo("en");
+                LastException = e.Exception;
+            };
         }
 
         [OneTimeTearDown]
